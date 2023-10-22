@@ -1,56 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 *{
     box-sizing:border-box;
     font-family: 'Poppins', sans-serif;
 }
+:root{
+    /*WORK PICTURE COLOUR PALLATE*/
+    --color-1:#28323F;
+    --color-2:#BCD1E8;
+    --color-3:#85A1A1;
+    --color-4:#7C90A9;
+    /*Graduate photo*/
+    --color-5:#3F3C44;
+    --color-6:#D4D7EF;
+    --color-7:#8787C0;
+    --color-8:#99A8D3;
+
+}
+body{
+    background-color: var(--color-1);
+}
 h1{
     text-align:center;
     margin-top:20px;
+    color: var(--color-3);
 }
-.about-me {
+h2{
+    text-align:center;
+    margin-top:20px;
+    color: var(--color-3);
+}
+p{
+    text-align:center;
+    margin-top:20px;
+    color: var(--color-2);
+}
+
+/*Profile picture*/
+.centered-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.card-container {
+    perspective: 1000px; /* Add perspective to enable 3D effect */
     text-align: center;
 }
-
-.about-me img {
-    width: 200px;
-    height: 200px;
+.card {
+    width: 300px;
+    height: 300px; /* Adjust the height to match the width */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border-radius: 50%; /* Set the border radius to 50% for a circular shape */
+}
+.card:hover {
+    transform: rotateY(180deg); /* Flip the card when hovered */
+}
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
     border-radius: 50%;
-    margin: 20px 0;
+   
 }
 
-.about-me ul {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+.card-front {
+    transform: rotateY(0deg);
 }
 
-.about-me li {
-    margin: 0 10px;
+.card-back {
+    transform: rotateY(180deg);
 }
-
-.about-me a {
-    color: #333;
-    font-size: 24px;
+.card-front img, .card-back img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
-
-.about-me a:hover {
-    color: #007bff;
+.elements ul li{
+   
+    padding: 10px;
 }
-
 .elements ul{
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
 .elements ul li i{
    font-size: 40px;
-   border: #007bff 2px solid;
+   color: var(--color-3);
+   border: var(--color-3) 2px solid;
    padding: 20px;
+   transition: transform 0.5s;
    border-radius: 50%;
+}
+.elements ul li i:hover {
+    transform: rotateY(180deg);
+    background-color: var(--color-3);
+    color: #28323F;
+}
+.socials ul{
+    display: flex;
+    justify-content: center;
+
 }
 .socials ul li{
     list-style: none;
 }
+.socials ul li i{
+    font-size: 20px;
+    color: var(--color-3);
+   
+    padding: 20px;
+    transition: transform 0.5s;
+    
+ }
+ .socials ul li i:hover {
+     transform: rotateY(180deg);
+     background-color: var(--color-3);
+     color: #28323F;
+ }
